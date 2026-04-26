@@ -78,10 +78,8 @@ The evaluation used standard summarization metrics:
 │   └── analysis/
 ├── docs/
 │   ├── proposal/
-│   ├── reports/
-│   └── presentation/
+│   └── reports/
 ├── examples/
-├── archive/
 ├── scripts/
 ├── requirements.txt
 └── README.md
