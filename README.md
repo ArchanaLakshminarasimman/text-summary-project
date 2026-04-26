@@ -93,24 +93,27 @@ The evaluation used standard summarization metrics:
 - `notebooks/mistral/mistral_pretrained.ipynb`
 - `notebooks/mistral/mistral_lora_finetuned.ipynb`
 - `notebooks/analysis/mistral_fine_tune_graph.ipynb`
-- Archived rough experiment: `archive/mistral_train_test_kaggle.ipynb`
 
 ### Documentation
 
 - Final report: `docs/reports/final-report.pdf`
-- Original report draft: `docs/reports/report-original.docx`
-- Updated report draft: `docs/reports/report-updated.docx`
 - Proposal: `docs/proposal/news-summarization-proposal.pdf`
-- Presentation deck: `docs/presentation/news-summarization-presentation.pptx`
+
+### Supporting Files
+
+- Example input article: `examples/sample-news-article.docx`
+- Notebook sanitizing helper: `scripts/sanitize_notebooks.jq`
+- Notebook polishing helper: `scripts/polish_notebook.jq`
 
 ## Reproducing the Work
 
-These notebooks were originally developed in Google Colab and Kaggle-style environments, so GPU access is strongly recommended.
+These notebooks were originally developed in Google Colab and Kaggle-style environments, so GPU access is strongly recommended. The repository is best viewed as a cleaned archive of the course project and report rather than a packaged, one-command training pipeline.
 
 1. Create a Python environment and install dependencies from `requirements.txt`.
-2. Configure Kaggle access using either environment variables or a local `kaggle.json`.
+2. Configure Kaggle access. The BART and pretrained Mistral notebooks still use `kaggle.json` upload cells, while the Mistral LoRA notebook reads `KAGGLE_USERNAME` and `KAGGLE_KEY` from environment variables.
 3. If running the Mistral notebooks, provide a Hugging Face access token through `HUGGINGFACE_TOKEN`.
-4. Open the notebooks in Jupyter, Colab, or Kaggle and run the cells in sequence.
+4. Open the notebooks in Colab, Kaggle, or Jupyter and run the cells in sequence.
+5. Expect a few environment-specific cells to need light adjustment outside Colab, especially cells that use `google.colab`, interactive uploads, or file download helpers.
 
 Example environment variables:
 
@@ -138,4 +141,4 @@ export HUGGINGFACE_TOKEN="your_hf_token"
 
 - Notebook outputs were cleared and sensitive tokens were removed before preparing this repository for GitHub.
 - The main notebooks were lightly polished with intro cells so the repo is easier to browse in GitHub.
-- This repository preserves the original project artifacts while reorganizing them into a cleaner portfolio-friendly layout.
+- This repository preserves the original project artifacts in a cleaner portfolio-friendly layout, but the notebooks still reflect the original Colab/Kaggle workflow.
